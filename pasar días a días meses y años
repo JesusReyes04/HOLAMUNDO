@@ -1,0 +1,15 @@
+int dias;
+            int año;
+            int mes;
+            Scanner leer = new Scanner(System.in);
+            System.out.println("Introduce una cantidad de días");
+            dias = leer.nextInt();
+            while(dias < 1){
+                System.out.println("Indroduce un número positivo de días");
+                dias = leer.nextInt();
+            }
+            año = dias/360;
+            dias = dias - año * 360;
+            mes = dias / 30;
+            dias = dias - mes * 30;
+            System.out.println("La cantidad introducida equivale a " + año + " año/s " + mes + " mes/es y " + dias + " dia/s ");
