@@ -1,4 +1,4 @@
-Inicio
+/*Inicio
 int num;
 int numIntentos=1;
 int intento;
@@ -13,7 +13,7 @@ sout("introduce otro intento");
 intento = leer.nexInt;
 }
 sout("has acertado el numero era " + numero + " has necesitado " + numIntentos);
-FIN
+FIN*/
 
 public class App {
     public static void main(String[] args) {
