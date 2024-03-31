@@ -1,40 +1,36 @@
-package cosasDelLibro.POO.EneEnRaya;
+package POO.EneEnRaya;
 
 import java.util.Scanner;
 
 public class Jugador {
     private String nombre;
-    private String ficha;
+    private Ficha ficha;
 
-    public void setFicha(String ficha) {
-        this.ficha = ficha;
+    public void introducirNombre() {
+        Scanner leer = new Scanner(System.in);
+        String nombreJugador;
+        System.out.println("¿Cómo te llamas?");
+        nombreJugador = leer.nextLine();
+        nombre=nombreJugador;   
     }
 
-    public String getFicha() {
-        return ficha;
-    }
-    
-    public void setNombre(String nombre){
-        this.nombre=nombre;
-    }
-
-    public String getNombre(){
+    public String getNombre() {
         return nombre;
     }
 
-    public void establecerCaracter(Scanner leer) {
-        String caracter;
+    public void introducirFicha() {
+        Scanner leer = new Scanner(System.in);
+        char fichita;
         do {
-            System.out.println("Introduzca su caracter");
-            caracter = leer.nextLine();
-        } while (caracter.length() == 0);
-        ficha = " " + caracter.substring(0, 1) + " ";
+            System.out.println("Introduce el caracter con el que quieres jugar " + nombre);
+            fichita = leer.nextLine().charAt(0);
+        } while (fichita == ' ');
+        ficha = new Ficha(fichita);
     }
 
-    public void introducirNombres(Scanner leer){
-        String nombre;
-        System.out.println("Introduzca su nombre");
-        nombre = leer.nextLine();
-        setNombre(nombre);
+    public Ficha getFicha() {
+        return ficha;
     }
+
+
 }
